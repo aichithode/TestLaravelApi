@@ -4,7 +4,7 @@
     <div class="col-xs-3" style="height:4px; background-color:rgba(11,63,194,0.6)"></div>
 </div>
 <div class="page-footer">
-    <div class="page-footer-inner" style="color:#322c2c">
+    <div class="page-footer-inner" style="color:rgb(50,44,44)">
         &copy; {{Carbon\Carbon::now()->format('Y')}} Test Laravel API
     </div>
     <div class="scroll-to-top">

@@ -27,7 +27,16 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('cat', 'DataController@getCategory');
-Route::get('prod', 'DataController@getProduct');
-//Route::match(['get', 'post'], 'exec', 'DataController@');
+Route::group(['middleware' => 'auth'], function () {
+    Route::match(['get', 'post'], 'produit', 'IndexController@listeProduit');
+    Route::match(['get', 'post'], 'fiche', 'IndexController@ficheProduit');
+    Route::match(['get', 'post'], 'produit/add', 'IndexController@ajouterProduit');
+    Route::match(['get', 'post'], 'produit/upd', 'IndexController@modifierProduit');
+    Route::get('produit/del', 'IndexController@supprProduit');
+});
+
+//Route::get('cat', 'DataController@getCategory');
+//Route::get('prod', 'DataController@getProduct');
+
+
 

@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '9bd9013a934f053425efb743739f39dbeee1ca8e',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -412,6 +412,15 @@
                 0 => '*',
             ),
         ),
+        'kris/laravel-form-builder' => array(
+            'pretty_version' => '1.40.0',
+            'version' => '1.40.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../kris/laravel-form-builder',
+            'aliases' => array(),
+            'reference' => '06b6773318c52208c72f65756884964fe3171934',
+            'dev_requirement' => false,
+        ),
         'laravel/fortify' => array(
             'pretty_version' => 'v1.8.2',
             'version' => '1.8.2.0',
@@ -440,12 +449,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '9bd9013a934f053425efb743739f39dbeee1ca8e',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -482,6 +491,15 @@
             'install_path' => __DIR__ . '/../laravel/tinker',
             'aliases' => array(),
             'reference' => 'c808a7227f97ecfd9219fbf913bad842ea854ddc',
+            'dev_requirement' => false,
+        ),
+        'laravelcollective/html' => array(
+            'pretty_version' => 'v6.2.1',
+            'version' => '6.2.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravelcollective/html',
+            'aliases' => array(),
+            'reference' => 'ae15b9c4bf918ec3a78f092b8555551dd693fde3',
             'dev_requirement' => false,
         ),
         'league/commonmark' => array(
@@ -876,6 +894,15 @@
             'install_path' => __DIR__ . '/../ramsey/uuid',
             'aliases' => array(),
             'reference' => 'fc9bb7fb5388691fd7373cd44dcb4d63bbcf24df',
+            'dev_requirement' => false,
+        ),
+        'rappasoft/laravel-helpers' => array(
+            'pretty_version' => 'v2.0.0',
+            'version' => '2.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../rappasoft/laravel-helpers',
+            'aliases' => array(),
+            'reference' => '39fc647c27db358c535919cda2040e89b51344af',
             'dev_requirement' => false,
         ),
         'rhumsaa/uuid' => array(

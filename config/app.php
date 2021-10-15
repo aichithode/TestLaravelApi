@@ -123,16 +123,16 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
-
     /***
      * Mes configuratons
      */
     'APP_NAME'=>'TEST LARAVEL API',
     'API_KEY' => 'vx64AonXBZVIIDkvhZHskyQLEN15iLk2',
-     //'API_LINK' => 'https://api-gateway.leroymerlin.fr/api-product/v2/nomenclatures/web/19/filters?fl=string&webmetadatas=string',
+    //'API_LINK' => 'https://api-gateway.leroymerlin.fr/api-product/v2/nomenclatures/web/19/filters?fl=string&webmetadatas=string',
     'API_LINK' => 'https://api-gateway.leroymerlin.fr/api-product/v2',
     'CATEGORY_LINK' =>'/nomenclatures/internal?fl=string',
     'PRODUCT_LINK' =>'/products/49017155?expand=media',
+    'NBRE_PAGINATE' =>2,
 
     /*
     |--------------------------------------------------------------------------
@@ -175,6 +175,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -186,6 +187,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
+
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -241,6 +244,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'Helper' => App\Helpers\Helper::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];

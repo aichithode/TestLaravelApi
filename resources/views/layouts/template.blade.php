@@ -3,7 +3,7 @@ header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 ?>
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <!--[if IE 8]>
 <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]>
@@ -50,7 +50,7 @@ header("Pragma: no-cache");
 <div class="container-fluid">
     <div class="page-container">
         <!-- BEGIN SIDEBAR -->
-            <!-- @include('layouts.left_menu')-->
+    <!-- @include('layouts.left_menu')-->
         <!-- END SIDEBAR -->
 
         <!-- BEGIN CONTENT -->

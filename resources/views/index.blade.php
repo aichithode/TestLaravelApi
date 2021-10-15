@@ -9,37 +9,30 @@
         </h3>
 
         <div class="row">
-            <div class="">
-
-                <div class="col-xs-12">
-                    <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover" id="sample_3" >
-                            <thead>
+            <div class="col-xs-12">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" id="sample_3" >
+                        <thead>
+                        <tr>
+                            <th class="col-sm-1" style="font-size: 1em">Id Catégorie</th>
+                            <th class="col-sm-2" style="font-size: 1em">Libellé Catégorie</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($liste as $item)
                             <tr>
-                                <th class="col-sm-1" style="font-size: 1em">Id Catégorie</th>
-                                <th class="col-sm-2" style="font-size: 1em">Libellé Catégorie</th>
-                                <th class="col-sm-3" style="font-size: 1em">Les produits</th>
+                                <td style="font-size: 1em">{{$item->id}}</td>
+                                <td style="font-size: 1em">
+                                    <a href="{{url('produit?id_categorie='.$item->id)}}"
+                                       id="modifier">
+                                        <i class="fa fa-list"></i> {{$item->libelle}}
+                                    </a>
+                                </td>
                             </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($liste as $item)
-                                <tr>
-                                    <td style="font-size: 1em">{{$item->id}}</td>
-                                    <td style="font-size: 1em">{{$item->libelle}}</td>
-                                    <td style="font-size: 1em">
-                                        ?>
-                                        <a href="{{url('product?id_category='.$item->id_category)}}"
-                                           id="modifier">
-                                            <i class="fa fa-list"></i> Liste des produits
-                                        </a>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                        @endforeach
+                        </tbody>
+                    </table>
                 </div>
-
             </div>
         </div>
     </div>

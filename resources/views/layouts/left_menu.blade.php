@@ -14,15 +14,9 @@
                     <span class="title">Produit</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="" class="nav-link nav-toggle">
-                    <i class="icon-anchor"></i>
-                    <span class="title">Nommenclature</span>
-                </a>
-            </li>
         </ul>
 
-        <div style="width: 100%; border-top: 3px solid rgba(23,11,194,0.96); padding-top: 1em; padding-bottom: 1em; margin-top: 2em"
+        <div style="width: 100%; border-top: 3px solid rgba(23,11,194,0.11); padding-top: 1em; padding-bottom: 1em; margin-top: 2em"
              class="text-center">
             <img src="{{url("img/cadi.png")}}" style="width: 60%; display: inline-block" alt="">
         </div>

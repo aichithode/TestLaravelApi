@@ -1,97 +1,50 @@
 @extends('layouts.template')
 
 @section('content')
-    <div class="portlet box blue">
-        <div class="portlet-title">
-            <div class="caption">
-                <i class="fa fa-file-o"></i>Fiche du produit
-            </div>
+    <div class="portlet light bordered " id='datasection' style="padding-bottom: 3em; min-height: 700px; padding-top: 1em">
+
+        <h3 style="border-bottom: 1px solid lightgrey; padding-bottom: 10px; margin-bottom: 10px">
+            <i class="fa fa-cart-plus"></i> Fiche Produit
+        </h3>
+
+        <div class="col-md-6" style="margin-bottom: 10px; padding: 0;">
+            <a href="{{url('produit')}}" class="dt-button buttons-print btn blue"> <i class="fa fa-hand-o-left"></i> Retour</a>
         </div>
-        <div class="portlet-body">
-            <div class="row">
-                <div class="col-md-6">
-                    <table>
-                        <tr>
-                            <td><b> Type de document</b>: </td>
-                            @if($bfu)
-                                <td class="col-sm-6"> {{$bfu->lib_type_doc}}</td>
-                            @endif
-                        </tr>
-                        <tr>
-                            <td> <b>Identifiant BFU</b>: </td>
-                            @if($bfu)
-                                <td class="col-sm-6">{{$bfu->id_bfu}} </td>
-                            @endif
-                        </tr>
-                        <tr>
-                            <td><b>Date de création</b>:</td>
-                            @if($bfu)
-                                <td class="col-sm-6"> {{($bfu->horodatage!=Null)? date("d/m/Y H:i:s",strtotime($bfu->horodatage)):""}}</td>
-                            @endif
-                        </tr>
 
-                        <tr>
-                            <td><b>Référence BFU</b>:</td>
-                            @if($bfu)
-                                <td class="col-sm-6">{{$bfu->ref_bfu}} </td>
-                            @endif
-                        </tr>
+        <div class="clearfix"></div>
 
-                        <tr>
-                            <td><b>Statut du BFU</b>:</td>
-                            @if($bfu)
-                                <td class="col-sm-6">{{$bfu->lib_stat_bfu}} </td>
-                            @endif
-                        </tr>
-                        <tr>
-                            <td><b>Date du statut</b>:</td>
-                            @if($bfu)
-                                <td class="col-sm-6"> {{($bfu->date_statut!=Null)? date("d/m/Y H:i:s",strtotime($bfu->date_statut)):""}}</td>
-                            @endif
-                        </tr>
-                    </table>
+        <div class="row">
+            <div class="portlet box green">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-binoculars"></i> Fiche du produit
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <table>
-                        <tr>
-                            <td class="col-sm-6"><b>Total HT</b> :</td>
-                            @if($bfu)
-                                <td class="col-sm-6">{{strrev(wordwrap(strrev((isset($bfu->total_ht)?$bfu->total_ht:0)), 3, ' ', true))}}</td>
-                            @endif
-                        </tr>
-                        <tr>
-                            <td class="col-sm-6"><b> Total TVA</b></td>
-                            @if($bfu)
-                                <td class="col-sm-6">{{strrev(wordwrap(strrev((isset($bfu->total_tva)?$bfu->total_tva:0)), 3, ' ', true))}}</td>
-                            @endif
-                        </tr>
-                        <tr>
-                            <td class="col-sm-6"><b>Total TTC</b>:</td>
-                            @if($bfu)
-                                <td class="col-sm-6">{{strrev(wordwrap(strrev((isset($bfu->total_ttc)?$bfu->total_ttc:0)), 3, ' ', true))}}</td>
-                            @endif
-                        </tr>
-
-                        <tr>
-                            <td class="col-sm-6"> <b>Total dû</b>:</td>
-                            @if($bfu)
-                                <td class="col-sm-6">{{strrev(wordwrap(strrev((isset($bfu->total_du)?$bfu->total_du:0)), 3, ' ', true))}}</td>
-                            @endif
-                        </tr>
-
-                        <tr>
-                            <td class="col-sm-6"><b>Total differé</b>:</td>
-                            @if($bfu)
-                                <td class="col-sm-6">{{strrev(wordwrap(strrev((isset($bfu->total_differer)?$bfu->total_differer:0)), 3, ' ', true))}}</td>
-                            @endif
-                        </tr>
-                        <tr>
-                            <td class="col-sm-6"><b>Total réglé:</b></td>
-                            @if($bfu)
-                                <td class="col-sm-6">{{strrev(wordwrap(strrev((isset($bfu->total_regler)?$bfu->total_regler:0)), 3, ' ', true))}}</td>
-                            @endif
-                        </tr>
-                    </table>
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table>
+                                <tr>
+                                    <td><b>NOM</b>: </td>
+                                    @if($product)
+                                        <td class="col-sm-6"> {{$product->nom}}</td>
+                                    @endif
+                                </tr>
+                                <tr>
+                                    <td> <b>DESCRIPTION</b>: </td>
+                                    @if($product)
+                                        <td class="col-sm-6">{{$product->description}} </td>
+                                    @endif
+                                </tr>
+                                <tr>
+                                    <td> <b>CATÉGORIE</b>: </td>
+                                    @if($product)
+                                        <td class="col-sm-6"> {{\App\Models\Categorie::where('id',$product->id_categorie)->first()->libelle}}</td>
+                                    @endif
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
