@@ -23,5 +23,13 @@ class CategoriesTableSeeder extends Seeder
             'updated_at' => \Carbon\Carbon::now(),
 
         ]);
+        DB::table('categories')->insert([
+            'libelle'     =>"SVC",
+            'description'     =>"",
+            'status'       =>"1",
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+
+        ]);
     }
 }

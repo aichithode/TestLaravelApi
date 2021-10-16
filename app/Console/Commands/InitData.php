@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Http\Controllers\DataController;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 
@@ -38,9 +39,10 @@ class InitData extends Command
      */
     public function handle()
     {
-        Log::info("Début Récupération");
-
-        Log::info("Fin Récupération");
+        Log::info("Début récupération des données de l'API");
+        //DataController::getCategory();
+        DataController::getProduct();
+        Log::info("Fin récupération des données de l'API");
         return Command::SUCCESS;
     }
 }

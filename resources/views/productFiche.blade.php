@@ -22,7 +22,7 @@
                 </div>
                 <div class="portlet-body">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-8">
                             <table>
                                 <tr>
                                     <td><b>NOM</b>: </td>
@@ -30,6 +30,8 @@
                                         <td class="col-sm-6"> {{$product->nom}}</td>
                                     @endif
                                 </tr>
+                                <tr></tr>
+                                <tr></tr>
                                 <tr>
                                     <td> <b>DESCRIPTION</b>: </td>
                                     @if($product)
@@ -40,6 +42,46 @@
                                     <td> <b>CATÉGORIE</b>: </td>
                                     @if($product)
                                         <td class="col-sm-6"> {{\App\Models\Categorie::where('id',$product->id_categorie)->first()->libelle}}</td>
+                                    @endif
+                                </tr>
+                                <tr>
+                                    <td> <b>LETTER RANGE</b>: </td>
+                                    @if($product)
+                                        <td class="col-sm-6">{{$product->letterRange}} </td>
+                                    @endif
+                                </tr>
+                                <tr>
+                                    <td> <b>UNIT SALE</b>: </td>
+                                    @if($product)
+                                        <td class="col-sm-6"> {{\App\Models\UnitSale::where('id',$product->id_unitSal)->first()->code}}</td>
+                                    @endif
+                                </tr>
+                                <tr>
+                                    <td> <b>UNIT CAPACITY</b>: </td>
+                                    @if($product)
+                                        <td class="col-sm-6">{{$product->unitCapacity}} </td>
+                                    @endif
+                                </tr>
+                                <tr>
+                                    <td> <b>CAPACITY QUANTITY</b>: </td>
+                                    @if($product)
+                                        <td class="col-sm-6">{{$product->capacityQuantity}} </td>
+                                    @endif
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-4">
+                            <table>
+                                <tr>
+                                    <td><b>DATE CREATION</b>: </td>
+                                    @if($product)
+                                        <td class="col-sm-6"> {{date("d/m/Y H:m:s",strtotime($product->created_at))}}</td>
+                                    @endif
+                                </tr>
+                                <tr>
+                                    <td> <b>DATE MIS A JOUR</b>: </td>
+                                    @if($product)
+                                        <td class="col-sm-6"> {{date("d/m/Y H:m:s",strtotime($product->updated_at))}}</td>
                                     @endif
                                 </tr>
                             </table>

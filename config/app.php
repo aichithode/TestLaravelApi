@@ -128,10 +128,18 @@ return [
      */
     'APP_NAME'=>'TEST LARAVEL API',
     'API_KEY' => 'vx64AonXBZVIIDkvhZHskyQLEN15iLk2',
-    //'API_LINK' => 'https://api-gateway.leroymerlin.fr/api-product/v2/nomenclatures/web/19/filters?fl=string&webmetadatas=string',
+
+    //https://api-gateway.leroymerlin.fr/api-product/v2/nomenclatures/web/?fl=string
+    //https://api-gateway.leroymerlin.fr/api-product/v2/nomenclatures/internal/?fl=string
+    //https://api-gateway.leroymerlin.fr/api-product/v2/nomenclatures/web/UNIVERSE/3012209
+    //'https://api-gateway.leroymerlin.fr/api-product/v2/nomenclatures/web/19/filters?fl=string&webmetadatas=string',
+
     'API_LINK' => 'https://api-gateway.leroymerlin.fr/api-product/v2',
-    'CATEGORY_LINK' =>'/nomenclatures/internal?fl=string',
-    'PRODUCT_LINK' =>'/products/49017155?expand=media',
+
+    'CATEGORY_LINK' =>'/nomenclatures/web/?fl=string',
+    'PRODUCT_LINK' =>'/products/_search/?q=string&fl=string&size=100&page=1',
+    //'PRODUCT_LINK' =>'/products/49017155?expand=media',
+
     'NBRE_PAGINATE' =>2,
 
     /*

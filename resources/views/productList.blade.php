@@ -48,8 +48,8 @@
                             <th class="col-sm-1" style="font-size: 1em">Id</th>
                             <th class="col-sm-2" style="font-size: 1em">Nom</th>
                             <th class="col-sm-2" style="font-size: 1em">Description</th>
-                            <th class="col-sm-2" style="font-size: 1em">Fiche</th>
-                            <th class="col-sm-2" style="font-size: 1em"></th>
+                            <th class="col-sm-1" style="font-size: 1em">Fiche</th>
+                            <th class="col-sm-1" style="font-size: 1em">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -60,13 +60,16 @@
                                 <td style="font-size: 1em">{{$item->description}}</td>
                                 <td style="font-size: 1em">
                                     <a href="{{url('fiche?id_produit='.$item->id)}}" id="fiche">
-                                        <i class="fa fa-binoculars"></i> Voir la fiche
+                                        <span class="btn green btn-xs"><i class="fa fa-binoculars"></i> Voir</span>
                                     </a>
                                 </td>
-                                <td>
-                                    <a href="{{url('produit/upd?id='.$item->id)}}" id="modifier"> <span class="btn blue btn-xs"><i class="fa fa-edit"></i></span>
+                                <td style="font-size: 1em">
+                                    <a href="{{url('produit/upd?id='.$item->id)}}" id="modifier">
+                                        <span class="btn blue btn-xs"><i class="fa fa-edit"></i></span>
                                     </a>
-                                    <span class="btn red btn-xs deleteprod" data-id='{{$item->id}}'> <i class="fa fa-times"></i> </span>
+                                    <span class="btn red btn-xs deleteProd" data-id='{{$item->id}}'>
+                                        <i class="fa fa-times"></i>
+                                    </span>
                                 </td>
                             </tr>
                         @endforeach

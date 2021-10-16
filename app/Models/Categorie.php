@@ -12,4 +12,16 @@ class Categorie extends Model
     protected $table= 'categories';
     protected $primaryKey = 'id';
     protected $guarded = [];
+
+    public static function saveCategorie($libelle){
+        $idCategorie=0;
+
+        $input['libelle'] = $libelle;
+        $input['description'] = $libelle;
+        $affectedRows =Categorie::create($input);
+        if($affectedRows){
+            $idCategorie=$affectedRows["id"];
+        }
+        return $idCategorie;
+    }
 }

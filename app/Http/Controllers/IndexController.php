@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categorie;
 use App\Models\Produit;
+use App\Models\UnitSale;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -70,6 +71,7 @@ class IndexController extends Controller
         $this->viewdata['id_categorie']=0;
 
         $this->viewdata['listCategory'] =Categorie::where('status',1)->orderby('libelle')->get();
+        $this->viewdata['listUnitSale'] =UnitSale::orderby('id')->get();
 
         if($request->isMethod('post')){
             $input=$request->All();
@@ -107,6 +109,7 @@ class IndexController extends Controller
         }
 
         $this->viewdata['listCategory'] =Categorie::where('status',1)->orderby('libelle')->get();
+        $this->viewdata['listUnitSale'] =UnitSale::orderby('id')->get();
         return view('updProduct')->with($this->viewdata);
     }
 

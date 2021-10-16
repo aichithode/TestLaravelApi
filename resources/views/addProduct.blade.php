@@ -59,7 +59,7 @@
                                 </label>
 
                                 <div class="col-md-12" style="padding: 0;">
-                                    <input id="description"  name="description" type="text" class="form-control"  value="{{old('descrption')}}" placeholder="description" >
+                                    <input id="description"  name="description" type="text" class="form-control"  value="{{old('description')}}" placeholder="description" >
                                 </div>
                             </div>
 
@@ -78,8 +78,53 @@
                                 </div>
                             </div>
 
+                            <div class="form-group col-xs-12" style="margin-bottom: 1em; padding-left:0">
+                                <label for="letterRange">
+                                    <b>Letter Range</b>
+                                </label>
+
+                                <div class="col-md-12" style="padding: 0;">
+                                    <input id="letterRange"  name="letterRange" type="text" class="form-control"  value="{{old('letterRange')}}" placeholder="letter range" >
+                                </div>
+                            </div>
+
+                            <div class="form-group col-xs-12" style="margin-bottom: 1em; padding-left:0">
+                                <label for="id_unitSal">
+                                    <b>Unit Sale</b>
+                                </label>
+
+                                <div class="col-md-12" style="padding: 0;">
+                                    <select class='form-control select2' name="id_unitSal" id="id_unitSal" >
+                                        <option>--Unit Sale--</option>
+                                        @foreach($listUnitSale as $each)
+                                            <option value="{{$each->id}}">{{$each->code.' ('.$each->libelle.')'}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-xs-12" style="margin-bottom: 1em; padding-left:0">
+                                <label for="unitCapacity">
+                                    <b>Unit Capacity</b>
+                                </label>
+
+                                <div class="col-md-12" style="padding: 0;">
+                                    <input id="unitCapacity"  name="unitCapacity" type="text" class="form-control"  value="{{old('unitCapacity')}}" placeholder="unit capacity" >
+                                </div>
+                            </div>
+
+                            <div class="form-group col-xs-12" style="margin-bottom: 1em; padding-left:0">
+                                <label for="capacityQuantity">
+                                    <b>Capacity Quantity</b>
+                                </label>
+
+                                <div class="col-md-12" style="padding: 0;">
+                                    <input id="capacityQuantity"  name="capacityQuantity" type="text" class="form-control"  value="{{old('capacityQuantity')}}" placeholder="capacity quantity" >
+                                </div>
+                            </div>
+
                             <div class="form-group text-center" id="groupbutton">
-                                <button type="reset" class="btn yellow" id="BtnReset">  <i class="icon-close"></i> Annuler</button>
+                                <button type="reset" class="btn red" id="BtnReset">  <i class="icon-close"></i> Annuler</button>
                                 <button type="submit" class="btn blue" id="BtnValider">  <i class="icon-check"></i> Valider</button>
                             </div>
 

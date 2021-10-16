@@ -15,17 +15,19 @@
                         <thead>
                         <tr>
                             <th class="col-sm-1" style="font-size: 1em">Id Catégorie</th>
-                            <th class="col-sm-2" style="font-size: 1em">Libellé Catégorie</th>
+                            <th class="col-sm-1" style="font-size: 1em">Libellé Catégorie</th>
+                            <th class="col-sm-1" style="font-size: 1em"></th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($liste as $item)
                             <tr>
                                 <td style="font-size: 1em">{{$item->id}}</td>
+                                <td style="font-size: 1em">{{$item->libelle}}</td>
                                 <td style="font-size: 1em">
                                     <a href="{{url('produit?id_categorie='.$item->id)}}"
                                        id="modifier">
-                                        <i class="fa fa-list"></i> {{$item->libelle}}
+                                        <i class="fa fa-list"></i> Voir les produits associés
                                     </a>
                                 </td>
                             </tr>
