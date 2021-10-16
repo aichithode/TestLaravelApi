@@ -136,8 +136,8 @@ return [
 
     'API_LINK' => 'https://api-gateway.leroymerlin.fr/api-product/v2',
 
-    'CATEGORY_LINK' =>'/nomenclatures/web/?fl=string',
-    'PRODUCT_LINK' =>'/products/_search/?q=string&fl=string&size=100&page=1',
+    'CATEGORY_LINK' =>'/nomenclatures/web/?fl=_links',
+    'PRODUCT_LINK' =>'/products/_search/?q=string&fl=_links',
     //'PRODUCT_LINK' =>'/products/49017155?expand=media',
 
     'NBRE_PAGINATE' =>2,
